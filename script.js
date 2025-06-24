@@ -52,9 +52,10 @@ window.onload = (event) => {
 
       ctx.beginPath();
       Array(i+1).keys().forEach(j=>{
-        let x = w/2+i+Math.random()*Math.sin(i)*Math.cos(j) *w/5
-        let y = w/2 + j+Math.random()*Math.sin(j)*Math.cos(i) *w/3 +40
-        ctx.arc(x,y, 2*i-j+1,0, i*-j/10 * Math.PI);
+        let x = w/2+i+2.5*Math.random()*Math.sin(i)*Math.cos(j+1) *w/5
+        let y = w/2 + j+1+Math.random()*Math.sin(j+1)*Math.cos(i) *w/3 +40
+        ctx.strokeStyle = 'rgba(' + x + ',' + g + ',' + b + ',0.9)';
+        ctx.arc(x,y, 2*i-j+1,i/100*j, i*-j+1/10 * Math.PI);
       })
       ctx.stroke();
     }
