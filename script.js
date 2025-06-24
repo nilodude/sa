@@ -49,6 +49,14 @@ window.onload = (event) => {
       ctx.font = 'bold 19px monospace';
       ctx.fillText(text2, 30, 200);
       ctx.drawImage(img, 0, 0, w, w)
+
+      ctx.beginPath();
+      Array(i+1).keys().forEach(j=>{
+        let x = w/2+i+Math.random()*Math.sin(i)*Math.cos(j) *w/5
+        let y = w/2 + j+Math.random()*Math.sin(j)*Math.cos(i) *w/5 +20
+        ctx.arc(x,y, 2*i-j+1,0, i*-j/10 * Math.PI);
+      })
+      ctx.stroke();
     }
     image.src = canvas.toDataURL()
 
