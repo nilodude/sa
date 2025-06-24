@@ -8,7 +8,7 @@ window.onload = (event) => {
   console.log(event);
   const galery = document.getElementById('galery');
 
-  [...Array(48).keys()].forEach(i => {
+  [...Array(55).keys()].forEach(i => {
     // const randi = Math.random()*999
     const div = document.createElement('div')
     div.id = 'imageContainer' + i
@@ -27,19 +27,19 @@ window.onload = (event) => {
       let rgbStep = 4
       //need to map collections ID to 0 - 255
       let { r, g, b } = {
-        r: 150 - i*rgbStep ,
-        g: 0+ i*rgbStep*0.75 ,
-        b: 255- i*rgbStep 
+        r: Math.max(150 - i*rgbStep ,0),
+        g: Math.max(0+ i*rgbStep*0.75 ,0),
+        b: Math.max(255- i*rgbStep ,0)
       }
 
-      let text1 = image.id
+      let text1 = image.id.replace('image', 'arfombra')
       let text2 = ('rgb(' + r + ',' + g + ',' + b + ')')
       // ctx.fillStyle = "white";
       // ctx.fillRect(0, 0, canvas.width, canvas.height);  
 
       
 
-      ctx.font = 'bold 39px monospace';
+      ctx.font = 'bold 32px monospace';
       ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.9)';
       ctx.strokeText(text1, 30, 100);
       
