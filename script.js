@@ -47,7 +47,7 @@ window.onload = (event) => {
       ctx.fillText(text1, -30+w / 2, w / 2)
       ctx.font = 'bold 19px monospace';
       ctx.fillText(text2, 30, 250);
-      ctx.drawImage(img, 0, 0, w, w)
+      ctx.drawImage(img, 0, 0, w, w);
 
       ctx.beginPath();
       Array(i+1).keys().forEach(j=>{
