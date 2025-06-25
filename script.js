@@ -1,9 +1,12 @@
 let numImages = 55;
-document.addEventListener('mousemove',  () =>{
-    ymodaba(numImages)
+let mouse = {x:10, y:10}
+document.addEventListener('mousemove',  (event) =>{
+  mouse.x = event.clientX;  
+  mouse.y = event.clientY;
+  ymodaba(numImages)
 });
-document.addEventListener("scroll", () =>{
-    ymodaba(numImages)
+document.addEventListener("scroll", (event) =>{
+  ymodaba(numImages)
 });
 window.onload = (event) => {
   console.log(event);
@@ -47,10 +50,10 @@ function ymodaba(numImages) {
 
       ctx.beginPath();
       [...Array(i + 1).keys()].forEach(j => {
-        let x = w / 2 + i + 2.5 * Math.random() * Math.sin(i) * Math.cos(j + 1) * w / 8
-        let y = w / 2 + j + 1 + Math.random() * Math.sin(j + 1) * Math.cos(i) * w / 3 + 40
+        let x = w / 4 + i + (mouse.x/40) * Math.random() * Math.sin(i) * Math.cos(j + 1) * w / 50
+        let y = w / 2 + j + 1 + (mouse.y/40) * Math.random() * Math.sin(j + 1) * Math.cos(i) * w / 50 + 40
         ctx.strokeStyle = 'rgba(' + x + ',' + g + ',' + b + ',0.9)';
-        ctx.arc(x, y, 2 * i - j + 1, i / 100 * j, i * -j + 1 / 40 * Math.PI);
+        ctx.arc(x, y, 2 * i - j + 1, i / 100 * j, i * -j + 1 / (40 * Math.PI/8));
         // ctx.strokeText('iyo', x, y);
       })
       ctx.stroke();
