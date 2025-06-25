@@ -43,14 +43,14 @@ function ymodaba(numImages) {
       ctx.strokeText(text1, 30, 100);
 
       ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.9)';
-      ctx.fillText(text1, -30 + w / 2, w / 2)
+      ctx.fillText(text1, -50 + w / 2, w / 2)
       ctx.font = 'bold 19px monospace';
       ctx.fillText(text2, 30, 250);
 
 
       ctx.beginPath();
       [...Array(i + 1).keys()].forEach(j => {
-        let x = w / 4 + i + (mouse.x/40) * Math.random() * Math.sin(i) * Math.cos(j + 1) * w / 50
+        let x = w / 3 + i + (mouse.x/40) * Math.random() * Math.sin(i) * Math.cos(j + 1) * w / 50
         let y = w / 2 + j + 1 + (mouse.y/40) * Math.random() * Math.sin(j + 1) * Math.cos(i) * w / 50 + 40
         ctx.strokeStyle = 'rgba(' + x + ',' + g + ',' + b + ',0.9)';
         ctx.arc(x, y, 2 * i - j + 1, i / 100 * j, i * -j + 1 / (40 * Math.PI/8));
