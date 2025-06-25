@@ -1,8 +1,10 @@
 let numImages = 55;
-document.addEventListener('mousemove', function() {
+document.addEventListener('mousemove',  () =>{
     ymodaba(numImages)
 });
-
+document.addEventListener("scroll", () =>{
+    ymodaba(numImages)
+});
 window.onload = (event) => {
   console.log(event);
   ymodaba(numImages)
@@ -20,7 +22,6 @@ function ymodaba(numImages) {
     canvas.id = 'canvas' + i
     let ctx = canvas.getContext("2d");
     if (ctx) {
-      let img = new Image();
       let w = 256
       canvas.width = w;
       canvas.height = w;
@@ -42,7 +43,6 @@ function ymodaba(numImages) {
       ctx.fillText(text1, -30 + w / 2, w / 2)
       ctx.font = 'bold 19px monospace';
       ctx.fillText(text2, 30, 250);
-      ctx.drawImage(img, 0, 0, w, w);
 
 
       ctx.beginPath();
