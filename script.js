@@ -46,7 +46,7 @@ function ymodaba(numImages) {
 
 
       ctx.beginPath();
-      Array(i + 1).keys().forEach(j => {
+      [...Array(i + 1).keys()].forEach(j => {
         let x = w / 2 + i + 2.5 * Math.random() * Math.sin(i) * Math.cos(j + 1) * w / 8
         let y = w / 2 + j + 1 + Math.random() * Math.sin(j + 1) * Math.cos(i) * w / 3 + 40
         ctx.strokeStyle = 'rgba(' + x + ',' + g + ',' + b + ',0.9)';
@@ -55,10 +55,7 @@ function ymodaba(numImages) {
       })
       ctx.stroke();
     }
-
     div.appendChild(canvas)
     galery.appendChild(div)
   })
-  
-
 }
