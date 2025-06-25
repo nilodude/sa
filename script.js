@@ -43,21 +43,20 @@ window.onload = (event) => {
       ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.9)';
       ctx.strokeText(text1, 30, 100);
       
-      console.log('rgba(' + r + ',' + g + ',' + b + ',0.9)')
       ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.9)';
       ctx.fillText(text1, -30+w / 2, w / 2)
       ctx.font = 'bold 19px monospace';
       ctx.fillText(text2, 30, 250);
       ctx.drawImage(img, 0, 0, w, w)
 
-      ctx.beginPath();
-      Array(i+1).keys().forEach(j=>{
-        let x = w/2+i+2.5*Math.random()*Math.sin(i)*Math.cos(j+1) *w/5
-        let y = w/2 + j+1+Math.random()*Math.sin(j+1)*Math.cos(i) *w/3 +40
-        ctx.strokeStyle = 'rgba(' + x + ',' + g + ',' + b + ',0.9)';
-        ctx.arc(x,y, 2*i-j+1,i/100*j, i*-j+1/10 * Math.PI);
-      })
-      ctx.stroke();
+      // ctx.beginPath();
+      // Array(i+1).keys().forEach(j=>{
+      //   let x = w/2+i+2.5*Math.random()*Math.sin(i)*Math.cos(j+1) *w/5
+      //   let y = w/2 + j+1+Math.random()*Math.sin(j+1)*Math.cos(i) *w/3 +40
+      //   ctx.strokeStyle = 'rgba(' + x + ',' + g + ',' + b + ',0.9)';
+      //   ctx.arc(x,y, 2*i-j+1,i/100*j, i*-j+1/10 * Math.PI);
+      // })
+      // ctx.stroke();
     }
     image.src = canvas.toDataURL()
 
