@@ -1,5 +1,5 @@
 let numImages = 55;
-document.addEventListener('click', function() {
+document.addEventListener('mousemove', function() {
     ymodaba(numImages)
 });
 
