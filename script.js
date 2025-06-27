@@ -1,4 +1,5 @@
-let numImages = 55;
+let numImages = 20
+;
 let mouse = {x:10, y:10}
 document.addEventListener('mousemove',  (event) =>{
   mouse.x = event.clientX;  
@@ -25,14 +26,14 @@ function ymodaba(numImages) {
     canvas.id = 'canvas' + i
     let ctx = canvas.getContext("2d");
     if (ctx) {
-      let w = 256
+      let w = 300
       canvas.width = w;
       canvas.height = w;
 
-      let rgbStep = 4
+      let rgbStep = Math.floor(255 /numImages )
       let { r, g, b } = {
         r: Math.max(150 - i * rgbStep, 0),
-        g: Math.max(0 + i * rgbStep * 0.75, 0),
+        g: Math.max(0 +  Math.floor(i * rgbStep * 0.75), 0),
         b: Math.max(255 - i * rgbStep, 0)
       }
       let text1 = canvas.id.replace('canvas', 'arfombra')
