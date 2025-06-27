@@ -1,5 +1,5 @@
-let numImages = 20
-;
+// images=[];fs.readdirSync('./redi').map(d=>images.push(fs.readFileSync('redi/'+d,'base64'))); images.forEach(i=>fs.writeFileSync('images.txt',i+'\nhola',{flag:'w'}))
+let numImages = 20;
 let mouse = {x:10, y:10}
 document.addEventListener('mousemove',  (event) =>{
   mouse.x = event.clientX;  
