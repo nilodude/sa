@@ -1,4 +1,6 @@
-// images=[];fs.readdirSync('./redi').map(d=>images.push(fs.readFileSync('redi/'+d,'base64'))); images.forEach(i=>fs.writeFileSync('images.txt',i+'\nhola',{flag:'w'}))
+// in cmd: magick mogrify -resize 20% -quality 100 -path ./redi *.JPG  
+// in node: images='';fs.readdirSync('images/redi').map(d=>images += fs.readFileSync('images/redi/'+d,'base64')+'\n'); fs.writeFileSync('images.txt',images,{flag:'w'})
+
 let numImages = 20;
 let mouse = {x:10, y:10}
 document.addEventListener('mousemove',  (event) =>{
